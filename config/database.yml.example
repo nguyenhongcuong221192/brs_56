@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: 123456
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: brs_56_development
+
+test:
+  <<: *default
+  database: brs_56_test
+
+production:
+  <<: *default
+  database: brs_56_production
+  username: brs_56
+  password: <%= ENV['LOGIN_APP_DATABASE_PASSWORD'] %>
