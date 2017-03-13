@@ -20,19 +20,37 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  base_title: "Review book Framgia"
-  R_O_R: "Ruby on Rails Tutorial"
-  my_name: "Nguyen Hong Cuong"
-  about: "About"
-  contact: "Contact"
-  logo: "Review book FRAMGIA"
-  home: "Home"
-  book: "Book"
-  sign_up: "Sign up"
-  log_in: "Log in"
+  logo: Review book FRAMGIA
   link_rails: http://www.railstutorial.org/
   search: Search
+  about: About
   new: New
-  the: The
+  contact: Contact
+  my_name: Nguyen Hong Cuong
+  ror: Ruby on rails
   by: by
-
+  the: The
+  home: Home
+  book: Book
+  signup: Sign up
+  login: Log in
+  logout: Log out
+  profile: Profile
+  setting: Setting
+  create_ac: Create account
+  new_user: New user ?
+  signup_now: Sign up now !
+  invalid: Invalid email/password combination
+  welcome: Welcome
+  the_form_contains: The form contains
+  account: Account
+  users_manager: User Manager
+  add_user: Add user
+  id: Id
+  name: Name
+  email: Email
+  address: Address
+  phone: Phone
+  actions: Actions
+  welcome_name: "Welcome %{name} !"
+  error: Error
