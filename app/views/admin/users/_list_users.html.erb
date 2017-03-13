@@ -1,0 +1,20 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.address %></td>
+  <td><%= user.phone %></td>
+  <% if current_user.admin? %>
+    <td>
+      <a href="#" data-toggle="modal" data-target="#<%= user.id %>" >
+        <span class="glyphicon glyphicon-pencil"></span>
+      </a>
+      <%= link_to "", admin_user_path(user), method: :delete,
+        data: {confirm: t("confirm_delete")},
+        class: "glyphicon glyphicon-remove" %>
+    </td>
+  <% end %>
+</tr>
+<div class="modal fade" id="<%= user.id %>" role="dialog">
+  <%= render partial: "edit", locals: {user: user} %>
+</div>
