@@ -54,3 +54,13 @@ en:
   actions: Actions
   welcome_name: "Welcome %{name} !"
   error: Error
+  user: User
+  please_login: Please log in.
+  complete: Complete !
+  not_complete: Not complete !
+  update: Update
+  update_user: Update user
+  confirm_delete: Are you sure want to delete ?
+  success_delete: You deleted success !
+  not_success_delete: You don't deleted success !
+  not_found: Not_found !

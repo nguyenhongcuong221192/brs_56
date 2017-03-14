@@ -1,12 +1,12 @@
 class User < ApplicationRecord
 
-  has_many :reviews, dependent: :destroy
-  has_many :comments, dependent: :destroy
-  has_many :requests, dependent: :destroy
-  has_many :ratings, dependent: :destroy
-  has_many :historys, dependent: :destroy
-  has_many :marks, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :reviews
+  has_many :comments
+  has_many :requests
+  has_many :ratings
+  has_many :historys
+  has_many :marks
+  has_many :likes
 
   has_many :active_relationships, class_name:  Relationship.name,
     foreign_key: "follower_id",dependent:   :destroy
@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  scope :order_by_date, ->{order(created_at: :desc)}
+
   attr_accessor :remember_token
   before_save {self.email = email.downcase}
   validates :name, presence: true, length: {maximum: Settings.maximum_name}
@@ -24,7 +26,8 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   has_secure_password
-  validates :password, presence: true, length: {minimum: Settings.minimum_password}
+  validates :password, presence: true, length: {minimum: Settings.minimum_password},
+    allow_nil: true
 
   class << self
     def digest string

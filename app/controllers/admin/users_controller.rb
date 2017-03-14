@@ -1,14 +1,12 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
 
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user, only: :edit
+  before_action :verify_admin
+  before_action :logged_in_user, only: [:index, :update, :destroy]
   before_action :load_user, only: [:edit, :destroy, :update]
 
-  def new
-    @user = User.new
-  end
-
-  def show
+  def index
+    @users = User.order_by_date.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   def create
@@ -16,13 +14,10 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = t("welcome_name", name: @user.name)
-      redirect_back_or @user
+      redirect_back_or user
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update
@@ -30,6 +25,15 @@ class UsersController < ApplicationController
       flash[:success] = t "complete"
     else
       flash[:danger] = t "not_complete"
+    end
+    redirect_to admin_users_path
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "success_delete"
+    else
+      flash[:danger] = t "not_success_delete"
     end
     redirect_to admin_users_path
   end
