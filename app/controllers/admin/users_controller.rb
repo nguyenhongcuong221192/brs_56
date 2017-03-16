@@ -44,4 +44,11 @@ class Admin::UsersController < ApplicationController
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :address, :phone
   end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+      flash[:warning] = t "not_found"
+      redirect_to admin_users_path
+  end
 end

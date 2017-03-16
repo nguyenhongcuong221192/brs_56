@@ -1,0 +1,21 @@
+<tr>
+  <td><%= book.id %></td>
+  <td><%= book.code %></td>
+  <td><%= link_to "#{book.title}", "#{}" %></td>
+  <td><%= link_to "#{book.author}", "#{}" %></td>
+  <td><%= book.category %></td>
+  <td><%= book.price %></td>
+  <td><%= book.rate %></td>
+  <td><%= book.favorite %></td>
+  <td><%= book.created_at.to_date.to_formatted_s(:rfc822) %></td>
+  <% if current_user.admin? %>
+    <td>
+      <a href="#" data-toggle="modal" data-target="#<%= book.id %>" >
+        <span class="glyphicon glyphicon-pencil"></span>
+      </a>
+      <%= link_to "", admin_book_path(book), method: :delete,
+        data: {confirm: t("confirm_delete")},
+        class: "glyphicon glyphicon-remove" %>
+    </td>
+  <% end %>
+</tr>
