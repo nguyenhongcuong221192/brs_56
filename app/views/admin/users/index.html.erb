@@ -1,6 +1,6 @@
 <% provide :title, t("users_manager") %>
 <div class="container">
-  <h1 style="text-align: center;"><%= t "users_maneger" %></h1>
+  <h1><%= t "users_manager" %></h1>
   <% if current_user.admin? %>
     <%= link_to t("add_user"), "#", class: "btn btn-sm btn-primary btn-create" %>
   <% end %>

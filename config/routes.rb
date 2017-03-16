@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root "static_pages#home"
     resources :users
+    resources :books do
+      collection { post :import }
+    end
   end
 end

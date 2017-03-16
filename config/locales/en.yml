@@ -64,3 +64,16 @@ en:
   success_delete: You deleted success !
   not_success_delete: You don't deleted success !
   not_found: Not_found !
+  code: Code
+  title: Title
+  author: Author
+  category: Category
+  price: Price
+  favorite: Favorite
+  rate: Rate
+  add_book: Add book
+  add_books: Add books
+  books_manager: Books manager
+  update_book: Update book
+  add: Add
+  upload_date: Upload date

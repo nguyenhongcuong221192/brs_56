@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
+  include BooksHelper
 
   def logged_in_user
     unless logged_in?
@@ -18,12 +19,5 @@ class ApplicationController < ActionController::Base
   def verify_admin
     @user = User.find_by id: params[:id]
     redirect_to root_url unless current_user.admin?
-  end
-
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-      flash[:warning] = t "not_found"
-      redirect_to admin_users_path
   end
 end
