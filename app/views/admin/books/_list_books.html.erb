@@ -19,3 +19,6 @@
     </td>
   <% end %>
 </tr>
+<div class="modal fade" id="<%= book.id %>" role="dialog">
+  <%= render partial: "edit", locals: {book: book} %>
+</div>

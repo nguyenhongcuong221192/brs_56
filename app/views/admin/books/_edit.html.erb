@@ -1,0 +1,40 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title"><%= t "update_book" %></h4>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <%= form_for [:admin, book] do |f| %>
+          <div class="col-md-2">
+            <%= f.label :image %>
+            <%= image_tag book.image, class: "image_book" if book.image?%>
+            <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+            </div>
+          <div class="col-md-6 col-md-offset-3">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
+
+            <%= f.label :author %>
+            <%= f.text_field :author, class: "form-control" %>
+
+            <%= f.label :category %>
+            <%= f.text_field :category, class: "form-control" %>
+
+            <%= f.label :price %>
+            <%= f.text_field :price, class: "form-control" %>
+
+            <%= f.label :rate %>
+            <%= f.text_field :rate, class: "form-control" %>
+
+            <%= f.label :favorite %>
+            <%= f.text_field :favorite, class: "form-control" %>
+
+            <%= f.submit t("update"), class: "btn btn-primary update" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
