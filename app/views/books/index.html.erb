@@ -1,0 +1,6 @@
+<div class="all_book">
+  <%= render partial: "list_books", collection: @books, as: :book %>
+</div>
+<div class="row">
+  <div class="paginate"><%= will_paginate %></div>
+</div>

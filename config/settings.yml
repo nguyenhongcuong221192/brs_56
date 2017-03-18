@@ -2,3 +2,12 @@ maximum_name: 50
 maximum_email: 255
 minimum_password: 6
 per_page: 10
+per_page_book: 9
+_0: 0
+_1: 1
+_2: 2
+_3: 3
+_4: 4
+_5: 5
+_star: "<span class='glyphicon glyphicon-star'></span>"
+_no_star: "<span class='glyphicon glyphicon-star-empty'></span>"

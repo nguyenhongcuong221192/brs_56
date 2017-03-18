@@ -1,0 +1,25 @@
+<div class="col-md-4">
+  <div class="books">
+    <figure class="img-responsive">
+      <%= image_tag book.image, class: "image_book" if book.image? %>
+      <figcaption>
+        <% if book.rate? %>
+          <%= display_star book.rate %>
+          <%= display_no_star book.rate %>
+        <% end %>
+        <span class="book-title"><%= book.title %></span>
+        <span class="book-price"><strong><%= book.price %> $</strong></span>
+        <span class="book-author"><%= book.author %></span>
+        <a href="">
+          <span class="book-like glyphicon glyphicon-thumbs-up"></span><%= t "like" %>
+        </a>
+        <a href="">
+          <span class="book-review glyphicon glyphicon-comment"></span><%= t "review" %>
+        </a>
+      </figcaption>
+      <span class="actions">
+        <button class="btn btn-warning bnt-action" type="submit"><%= t "read" %></button>
+      </span>
+    </figure>
+  </div>
+</div>
