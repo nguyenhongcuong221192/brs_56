@@ -1,0 +1,67 @@
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <span class="glyphicon glyphicon-user"></span> <%= t "user" %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne">
+      <div class="panel-body">
+        <table class="table">
+          <tr>
+            <td>
+              <span><%= t "user_name_p" %> </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span><%= t "name_p" %> </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span><%= t "books_p" %> </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span><%= t "reviews" %> </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <span class="glyphicon glyphicon-list-alt"></span> <%= t "category" %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo">
+      <div class="panel-body">
+        <table class="table">
+          <tr>
+            <td>
+              <a href=""><%= t "non-fiction" %></a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href=""><%= t "novel" %></a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href=""><%= t "short_story" %></a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
