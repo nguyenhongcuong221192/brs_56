@@ -13,6 +13,7 @@ class Book < ApplicationRecord
   validates :category, presence: true
 
   scope :books_desc, ->{order(created_at: :desc)}
+  scope :search, -> (search) {where("title LIKE ? OR category LIKE ? OR rate LIKE ? OR favorite LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")}
 
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
