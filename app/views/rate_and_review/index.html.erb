@@ -1,0 +1,48 @@
+<div class="review_book_infor">
+  <div class="col-md-2">
+    <%= image_tag @book.image, class: "review_book_image" if @book.image?%>
+  </div>
+  <div class="col-md-6 review_book_title">
+    <label>
+      <%= link_to @book.title, "#", class: "title" %>
+      <br>
+      <h5>
+        <%= t "category" %>
+        <i><%= link_to @book.category, "#" %></i>
+      </h5>
+      <h5>
+        <%= t "by" %> <%= link_to @book.author, "#" %>
+      </h5>
+    </label>
+    <h5 class="h5_all_reviews">
+      <i><%= link_to t("all_reviews"), "#" %></i>
+    </h5>
+  </div>
+</div>
+<div class="review_book_rate">
+  <label class="lb_rate">
+    <i class="i_rating">
+      <h5><%= t "my_rating" %> </h5>
+    </i>
+  <div id="star" class="rate_star"></div>
+  </label>
+</div>
+<div>
+  <%= form_for @review, url: reviews_path do |f| %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.hidden_field :book_id, value: @book.id %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.text_field :review_title, class: "form-control", placeholder: "Title..."%>
+          <%=f.text_area :review_content, class: "form-control r_textarea", placeholder: "Review..." %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.submit t("review"), class: "btn main-btn pull-right" %>
+      </div>
+    </div>
+  <% end %>
+</div>

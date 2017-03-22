@@ -1,0 +1,72 @@
+<div class="review_book_infor">
+  <div class="col-md-2">
+    <%= image_tag @book.image, class: "review_book_image" if @book.image?%>
+  </div>
+  <div class="col-md-6 review_book_title">
+    <label>
+      <%= link_to @book.title, "#", class: "title" %>
+      <br>
+      <h5>
+        <%= t "category" %>
+        <i><%= link_to @book.category, "#" %></i>
+      </h5>
+      <h5>
+        <%= t "by" %> <%= link_to @book.author, "#" %>
+      </h5>
+    </label>
+    <h5 class="h5_all_reviews">
+      <i><%= link_to t("all_reviews"), "#" %></i>
+    </h5>
+  </div>
+</div>
+
+<div class="review_book_rate">
+  <label class="lb_rate">
+    <i>
+      <h5><%= t "my_rate" %> </h5>
+    </i>
+  </label>
+  <div id="star" class="rate_star"></div>
+</div>
+
+<%= form_for @review, url: review_path do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <div class="review_book_rate">
+          <label class="lb_rate">
+            <span style="float: left;">
+              <i><h5><%= t"review_title" %> </h5></i>
+            </span>
+            <a href="#" class="review_title"><%= @review.review_title %></a>
+          </label>
+        </div>
+        <div class="review_book_rate col-md-12">
+          <div class="panel panel-default panel_review_content">
+            <div class="panel-heading">
+              <%= t"review" %>
+              <div class="review_content_head">
+                <span class="glyphicon glyphicon-thumbs-up review_like"></span>
+                <span class="glyphicon glyphicon-comment review_comment">
+                </span>
+                <a href="#" data-toggle="modal" data-target="#idmodal">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <%= link_to "", review_path(@review), method: :delete,
+                  data: {confirm: t("confirm_delete")},
+                  class: "glyphicon glyphicon-trash" %>
+              </div>
+            </div>
+            <div class="panel-body">
+              <%= @review.review_content %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="modal fade" id="idmodal" role="dialog">
+  <%= render partial: "edit", locals: {view: @view} %>
+</div>

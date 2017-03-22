@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :books
+  resources :rate_and_review
+  resources :reviews
 
   namespace :admin do
     root "static_pages#home"
