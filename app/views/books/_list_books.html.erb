@@ -14,7 +14,9 @@
           <span class="book-like glyphicon glyphicon-thumbs-up"></span><%= t "like" %>
         </a>
         <a href="">
-          <span class="book-review glyphicon glyphicon-comment"></span><%= t "review" %>
+          <span class="book-review glyphicon glyphicon-comment"></span>
+          <%= link_to t("review"), rate_and_review_index_path(book_id: book.id)
+          %>
         </a>
       </figcaption>
       <span class="actions">

@@ -250,3 +250,125 @@ figcaption .book-author {
 .book-author {
   border-bottom: 2px solid #333;
 }
+
+.contact-form {
+  margin-top:15px;
+}
+.r_textarea {
+  margin-top: 10px;
+  min-height:220px;
+  resize:none;
+}
+.form-control {
+  box-shadow:none;
+  border-color:#eee;
+}
+.form-control:focus{
+  box-shadow:none;
+  border-color:#00b09c;
+}
+.main-btn{
+  background:#00b09c;
+  border-color:#00b09c;
+  color:#fff;
+}
+.main-btn:hover{
+  background:#00a491;
+  color:#fff;
+}
+.form-control-feedback {
+  line-height: 50px;
+  top: 0px;
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.review_book_title {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.review_book_infor {
+  background-color: #fff;
+  height: 170px;
+  border-radius: 10px;
+}
+
+.review_book_rate {
+  background-color: #fff;
+  height: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.review_book_image {
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 110px;
+  height: 130px;
+}
+
+.lb_rate {
+  float: left;
+  margin-top: 0px;
+  margin-left: 40px;
+}
+
+.r_show_textarea {
+  margin-top: 10px;
+  resize:none;
+  background-color: #fff;
+}
+
+.rate_star {
+  float: left;
+  margin-top: 7px;
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+.lb_r_title {
+  background-color: #fff;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 20px;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.review_title {
+  float: left;
+  margin-top: 7px;
+  margin-left: 20px;
+  margin-right: 40px;
+  text-transform: uppercase;
+}
+
+.panel_review_content {
+  margin-top: 20px;
+}
+
+.review_content_head {
+  float: right;
+}
+
+.review_like {
+  margin-right: 10px;
+}
+
+.review_comment {
+  margin-right: 30px;
+}
+
+.i_rating {
+  float: left;
+}
+
+.h5_all_reviews {
+  text-align: right;
+}
